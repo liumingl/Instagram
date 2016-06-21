@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVOSCloud
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-    // Override point for customization after application launch.
+    
+    AVOSCloud.setApplicationId("2NL5pkgYfnrMXkbf17w5rU62-gzGzoHsz", clientKey: "6Sl5rQaIyXh90CE0i26b2gaJ")
+    
+    // 如果想跟踪统计应用的打开情况，后面还可以添加下列代码
+    AVAnalytics.trackAppOpened(launchOptions: launchOptions)
+    
     return true
   }
 
